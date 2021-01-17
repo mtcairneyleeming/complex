@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+        <title>Complex graphing</title>
+
+        <style>
+                .chart {
+                        width: 100%;
+                        height: 500px;
+                }
+        </style>
+</head>
+
+<body>
+        <main class="container">
+                <h1>Complex number graphing</h1>
+                <div class="row">
+
+                        <p class="col-sm-6">
+                                The inverse of your conformal map: \(z\mapsto \) <input id="conformal_map"><br />
+                                (<a href="https://mathjs.org/docs/expressions/syntax.html">Syntax</a>)</p>
+                        <p class="col-sm-6">
+                                - nicely formatted:
+                                <span id="conformal_latex">\(\)</span>
+                        </p>
+
+                </div>
+                <p>
+                        choose region:
+
+                        <select id="region_select">
+                                <option value="disc">Disc</option>
+                                <option value="annulus">Annulus</option>
+                                <option value="sector">Sector</option>
+                                <option value="horiz_strip">Horizontal strip</option>
+                                <option value="vert_strip">Vertical strip</option>
+                                <option value="diff_circles">Difference of circles</option>
+
+                                <option value="int_circles">Intersection of circles</option>
+                        </select>
+                </p>
+
+                <form id="region_options"></form>
+
+                <h6>Config options:</h6>
+                <form>
+                        <label class="form-label" for="domain_infinity">'Infinity' for the domain (regions that extend to infinity will actually extend as far as points with this magnitude)</label>
+                        <input class="form-control" id="domain_infinity" type="number" min="0" value="1000">
+                        <label class="form-label" for="range_infinity">'Infinity' for the range (points in the domain mapped to a point in the range with magnitude larger than this will be discarded)</label>
+                        <input class="form-control" id="range_infinity" type="number" min="0" value="10000">
+                </form>
+                <br />
+                <button class="btn btn-primary" id="calc_button">Calculate map</button>
+
+                <div class="chart" id="pre_chart"></div>
+
+                <div class="chart" id="post_chart"></div>
+
+
+        </main>
+
+        <!-- JS -->
+        <!-- <script async
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML-full">
+                </script> -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <script src="./src/index.tsx"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+
+</html>

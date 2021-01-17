@@ -1,0 +1,37 @@
+New plan!!:
+
++ inverse function input in math.js syntax
++ live preview from MathJax
+
+- plot domain as regions with shaders on shadertoy.com:
+    1. black/white in/out each set.
+    2. add gradients
+    3. design d3 thing that, given scales/whatever, maps pixels to grid coords, works out colour from grid coords, then draws colour.
+
+- new d3 thingy: 
+    - idea 1: probably slow
+        - it works out visible area
+        - draw on canvas as little pixel squares??? possibly with fillRect?
+        - inverse maps each point to domain, and draws it if it is, in the colour that that area would be.
+    - idea 2: 
+        - work out a sensible area the view will be in, move if necessary
+        - store colour of inverse maped points in this area as a texture???
+        - use texture to draw
+
+
+
+
+
+
+
+
+To do:
+
+- point generation for remaining region types
+- radio button input type
+- form layout issues
+- annulus,disk colour offset
+- strip, sector limits
+- chart square
+- after chart
+- riemann sphere
